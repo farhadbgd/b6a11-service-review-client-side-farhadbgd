@@ -1,10 +1,11 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+
 import slide1 from './slide1.jpg'
 import slide2 from './slide2.jpg'
 import slide3 from './slide3.jpg'
 
-const CarouselSection = () => {
+const Banner = () => {
     return (
         <div>
             <Carousel variant="dark">
@@ -48,4 +49,4 @@ const CarouselSection = () => {
     );
 };
 
-export default CarouselSection;
+export default Banner;
