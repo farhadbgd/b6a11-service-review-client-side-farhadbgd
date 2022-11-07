@@ -9,10 +9,10 @@ const Section1 = () => {
                     <img
                         className="d-block w-100"
                         src="holder.js/800x400?text=First slide&bg=f5f5f5"
-                        alt="First slide"
+                        alt="Section 1"
                     />
                     <Carousel.Caption>
-                        <h5>Section one</h5>
+                        <h5>First slide label</h5>
                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
