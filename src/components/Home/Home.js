@@ -43,7 +43,7 @@ const Home = () => {
 
                                                 <div className="d-grid gap-2">
                                                     <Button variant="secondary" size="lg">
-                                                        <Link style={{ textDecoration: 'none' }} to={`/checkout/${service._id}`}> Get Premium Access</Link>
+                                                        <Link style={{ textDecoration: 'none', color: 'white' }} to={`/services/${service._id}`}> Detailed</Link>
                                                     </Button>
                                                 </div>
                                             </Card.Body>
@@ -56,7 +56,7 @@ const Home = () => {
                     }
                     <div className="d-grid gap-2">
                         <Button variant="secondary" size="lg">
-                            <Link style={{ textDecoration: 'none' }} to='/services'> Get Premium Access</Link >
+                            <Link style={{ textDecoration: 'none', color: 'white' }} to='/services'> See all</Link >
                         </Button>
                     </div>
                 </div>
