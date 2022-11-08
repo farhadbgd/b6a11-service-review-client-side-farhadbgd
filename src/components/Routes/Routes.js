@@ -13,6 +13,7 @@ export const Routes = createBrowserRouter([
         children: [
             {
                 path: "/",
+                loader: () => fetch('http://localhost:5000/services'),
                 element: <Home></Home>
             },
             {
@@ -21,6 +22,7 @@ export const Routes = createBrowserRouter([
             },
             {
                 path: "/service",
+                loader: () => fetch('http://localhost:5000/services'),
                 element: <Service></Service>
             },
             {

@@ -6,7 +6,7 @@ import { Routes } from './components/Routes/Routes';
 
 function App() {
   return (
-    <div style={{ width: '75%', margin: 'auto' }}>
+    <div className='container h-75'>
       <RouterProvider router={Routes}></RouterProvider>
     </div>
   );
