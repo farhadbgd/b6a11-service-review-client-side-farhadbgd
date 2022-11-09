@@ -6,7 +6,7 @@ import { Routes } from './components/Routes/Routes';
 
 function App() {
   return (
-    <div style={{ background: 'gray', fontFamily: 'Verdana, Geneva, Tahoma, sans-serif' }} className='container h-75'>
+    <div style={{ fontFamily: 'Verdana, Geneva, Tahoma, sans-serif' }} className='container h-75'>
       <RouterProvider router={Routes}></RouterProvider>
     </div>
   );
