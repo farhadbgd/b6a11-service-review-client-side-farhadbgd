@@ -62,6 +62,9 @@ const Service = () => {
                                     <Card.Body>
                                         <Card.Title className='text-center'>{services.reviewer}</Card.Title>
                                         <Card.Text >
+                                            Date and Time  {services.ts}
+                                        </Card.Text>
+                                        <Card.Text >
                                             {services.review}
                                         </Card.Text>
                                     </Card.Body>

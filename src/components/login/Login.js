@@ -12,7 +12,6 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const googleProvider = new GoogleAuthProvider();
-    // const gitProvider = new GithubAuthProvider()
     const from = location.state?.from?.pathname || '/';
 
     const googleSignIn = () => {
@@ -33,23 +32,7 @@ const Login = () => {
             })
     }
 
-    // const gitSignIn = () => {
-    //     providerLogin(gitProvider)
-    //         .then(result => {
-    //             const user = result.user;
-    //             console.log(user);
-    //             setError('');
-    //             navigate(from, { replace: true });
 
-    //         })
-    //         .catch(error => {
-    //             console.error(error)
-    //             setError(error.message);
-    //         })
-    //         .finally(() => {
-    //             setLoading(false);
-    //         })
-    // }
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -73,7 +56,6 @@ const Login = () => {
             .finally(() => {
                 setLoading(false);
             })
-
 
     }
 
@@ -104,9 +86,7 @@ const Login = () => {
             <div className="d-grid gap-2 my-4">
                 <Button onClick={googleSignIn} variant="primary">Log in with Gmail</Button>{' '}
             </div>
-            {/* <div className="d-grid gap-2 my-4">
-                <Button onClick={gitSignIn} variant="success">Log in with Git</Button>{' '}
-            </div> */}
+
             <div className="d-grid gap-2 my-4">
                 <Button variant="success">If you have no account, please <Link to={'/register'} className="text-dark">Register</Link></Button>{' '}
             </div>
