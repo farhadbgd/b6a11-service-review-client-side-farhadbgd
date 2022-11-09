@@ -7,6 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { AuthContext } from '../../Context/AuthProvider';
 import { FaUser } from 'react-icons/fa';
+import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
 const Header = () => {
 
@@ -39,26 +40,27 @@ const Header = () => {
                         <Nav className="me-auto">
                             <Nav.Link href="/">Home</Nav.Link>
                             <Nav.Link href="/blog">Blog</Nav.Link>
-                            <Nav.Link href="/services">Services</Nav.Link>
                             <NavDropdown title="Services" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                                <NavDropdown.Item href="/services">Teeth Cleaning</NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.2">
-                                    Teeth Cleaning
-                                </NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.2">
+                                <NavDropdown.Item href="/services">
                                     Teeth Whitening
                                 </NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.2">
+                                <NavDropdown.Item href="/services">
+                                    Teeth Restoration
+                                </NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item href="/services">
                                     Dental Extractions
                                 </NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">
+                                <NavDropdown.Item href="/services">
                                     Root Canals
+                                </NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item href="/services">
+                                    Inlays and Onlays
                                 </NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
@@ -71,8 +73,8 @@ const Header = () => {
                                         <>
                                             <span>{user?.displayName ? user.displayName : user.email}</span>
                                             <Link variant="light" onClick={handleLogOut} className="d-flex align-items-center px-2 text-dark" style={{ textDecoration: 'none' }}>Logout</Link>
-                                            <Link variant="light" onClick={handleLogOut} className="d-flex align-items-center px-2 text-dark" style={{ textDecoration: 'none' }}>Add Service</Link>
-                                            <Link variant="light" onClick={handleLogOut} className="d-flex align-items-center px-2 text-dark" style={{ textDecoration: 'none' }}>See Your Review</Link>
+                                            <Link variant="light" to={'/addservice'} className="d-flex align-items-center px-2 text-dark" style={{ textDecoration: 'none' }}>Add Service</Link>
+                                            <Link variant="light" to={'/myreview'} className="d-flex align-items-center px-2 text-dark" style={{ textDecoration: 'none' }}>My Review</Link>
                                         </>
                                         :
                                         <>

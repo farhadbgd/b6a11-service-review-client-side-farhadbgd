@@ -1,19 +1,15 @@
-// import React, { useContext } from 'react';
-// import Button from 'react-bootstrap/Button';
-// import Form from 'react-bootstrap/Form';
-// import { Link } from 'react-router-dom';
-// import { AuthContext } from '../context/AuthProvider/AuthProvider';
-
 import { useContext } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import { AuthContext } from "../../Context/AuthProvider";
+import useTitle from "../useTitle/useTitle";
 
 
 const Register = () => {
 
+    useTitle('register');
     const { createUser } = useContext(AuthContext);
-    console.log(createUser);
+
 
     const handleSubmit = event => {
         event.preventDefault();

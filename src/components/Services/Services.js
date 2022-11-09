@@ -6,10 +6,12 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import useTitle from '../useTitle/useTitle';
 
 
 
 const Services = () => {
+    useTitle('services');
     const services = useLoaderData()
 
     return (

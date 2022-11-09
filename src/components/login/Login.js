@@ -3,8 +3,10 @@ import { useContext, useState } from "react";
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { Button, Form } from 'react-bootstrap';
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../useTitle/useTitle';
 
 const Login = () => {
+    useTitle('login');
     const [error, setError] = useState('');
     const { signIn, setLoading, providerLogin } = useContext(AuthContext);
     const navigate = useNavigate();

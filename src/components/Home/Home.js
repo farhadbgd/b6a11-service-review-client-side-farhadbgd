@@ -43,7 +43,7 @@ const Home = () => {
 
                                                 <div className="d-grid gap-2">
                                                     <Button variant="secondary" size="lg">
-                                                        <Link style={{ textDecoration: 'none', color: 'white' }} to={`/services/${service._id}`}> Detailed</Link>
+                                                        <Link style={{ textDecoration: 'none', color: 'white' }} to={`/services/${service._id}`}> View Detailed</Link>
                                                     </Button>
                                                 </div>
                                             </Card.Body>
