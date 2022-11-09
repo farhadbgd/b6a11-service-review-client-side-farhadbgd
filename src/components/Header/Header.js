@@ -34,10 +34,10 @@ const Header = () => {
                             alt="React Bootstrap logo"
                         />
                     </Navbar.Brand>
-                    <Navbar.Brand href="/">Happy Smile</Navbar.Brand>
+                    <Navbar.Brand style={{ fontSize: '25px', color: 'orange', fontWeight: 'bold', fontStyle: 'italic' }} href="/">Happy Smile</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto">
+                        <Nav style={{ fontSize: '20px', color: 'orange', fontWeight: 'bold' }} className="me-auto">
                             <Nav.Link href="/">Home</Nav.Link>
                             <Nav.Link href="/blog">Blog</Nav.Link>
                             <NavDropdown title="Services" id="collasible-nav-dropdown">
@@ -72,9 +72,9 @@ const Header = () => {
                                     user?.uid ?
                                         <>
                                             <span>{user?.displayName ? user.displayName : user.email}</span>
-                                            <Link variant="light" onClick={handleLogOut} className="d-flex align-items-center px-2 text-dark" style={{ textDecoration: 'none' }}>Logout</Link>
-                                            <Link variant="light" to={'/addservice'} className="d-flex align-items-center px-2 text-dark" style={{ textDecoration: 'none' }}>Add Service</Link>
-                                            <Link variant="light" to={'/myreview'} className="d-flex align-items-center px-2 text-dark" style={{ textDecoration: 'none' }}>My Reviews</Link>
+                                            <Link variant="light" onClick={handleLogOut} className="d-flex align-items-center px-2" style={{ textDecoration: 'none', fontSize: '15px', color: 'red', fontWeight: 'bold' }}>Logout</Link>
+                                            <Link variant="light" to={'/addservice'} className="d-flex align-items-center px-2" style={{ textDecoration: 'none', fontSize: '15px', color: 'green', fontWeight: 'bold' }}>Add Service</Link>
+                                            <Link variant="light" to={'/myreview'} className="d-flex align-items-center px-2 " style={{ textDecoration: 'none', fontSize: '15px', color: 'orange', fontWeight: 'bold' }}>My Reviews</Link>
                                         </>
                                         :
                                         <>
