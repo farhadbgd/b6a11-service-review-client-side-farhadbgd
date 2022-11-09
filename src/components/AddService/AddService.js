@@ -1,8 +1,10 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import useTitle from '../useTitle/useTitle';
 
 const AddService = () => {
+    useTitle('addservice');
     return (
         <div>
             <Form>

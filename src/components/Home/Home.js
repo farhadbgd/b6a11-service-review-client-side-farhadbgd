@@ -9,6 +9,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const Home = () => {
     const services = useLoaderData()
@@ -18,7 +19,6 @@ const Home = () => {
             <Banner></Banner>
 
             <div>
-                <h1>Services Page{services?.length || 0}</h1>
                 <div className="d-flex flex-wrap justify-content-evenly  m-4">
                     {
                         services?.slice(0, 3).map(service =>
@@ -27,7 +27,12 @@ const Home = () => {
                                 <Row xs={1} md={2} lg={3} className="g-6 m-5">
                                     <Col>
                                         <Card style={{ width: '18rem', height: '30rem' }}>
-                                            <Card.Img variant="top" src={service.img} />
+
+                                            <PhotoProvider>
+                                                <PhotoView src={service.img}>
+                                                    <Card.Img variant="top" src={service.img} />
+                                                </PhotoView>
+                                            </PhotoProvider>
 
                                             <Card.Body>
                                                 <Card.Title>{service.title}</Card.Title>

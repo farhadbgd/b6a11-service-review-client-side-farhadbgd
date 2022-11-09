@@ -7,10 +7,21 @@ import { Link } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import useTitle from '../useTitle/useTitle';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import Spinner from 'react-bootstrap/Spinner';
 
 
 
 const Services = () => {
+    // spinner loading
+    function BasicExample() {
+        return (
+            <Spinner animation="border" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </Spinner>
+        );
+    }
+    BasicExample();
     useTitle('services');
     const services = useLoaderData()
 
@@ -28,7 +39,12 @@ const Services = () => {
                                 <Col>
 
                                     <Card style={{ width: '18rem', height: '30rem' }}>
-                                        <Card.Img variant="top" src={service.img} />
+                                        <PhotoProvider>
+                                            <PhotoView src={service.img}>
+                                                <Card.Img variant="top" src={service.img} />
+                                            </PhotoView>
+                                        </PhotoProvider>
+
                                         <Card.Body>
                                             <Card.Title >{service.title}</Card.Title>
                                             <Card.Text >

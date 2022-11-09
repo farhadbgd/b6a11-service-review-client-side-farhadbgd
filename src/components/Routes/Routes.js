@@ -5,6 +5,7 @@ import Home from "../Home/Home";
 import Login from "../login/Login";
 import Register from "../login/Register";
 import Main from "../Main/Main";
+import MyReview from "../MyReview/MyReview";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Service from "../Service/Service";
 import Services from "../Services/Services";
@@ -32,7 +33,7 @@ export const Routes = createBrowserRouter([
             {
                 path: "/services",
                 loader: () => fetch('http://localhost:5000/services'),
-                element: <PrivateRoute><Services></Services></PrivateRoute>
+                element: <Services></Services>
 
             },
             {
@@ -48,6 +49,11 @@ export const Routes = createBrowserRouter([
             {
                 path: "/addservice",
                 element: <PrivateRoute><AddService></AddService></PrivateRoute>
+
+            },
+            {
+                path: "/myreview",
+                element: <PrivateRoute><MyReview></MyReview></PrivateRoute>
 
             }
         ]

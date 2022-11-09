@@ -1,25 +1,33 @@
 import React from 'react';
-import Carousel from 'react-bootstrap/Carousel';
+import image1 from './image1.jpg'
 
 const Section1 = () => {
     return (
-        <div>
-            <Carousel variant="dark">
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src="holder.js/800x400?text=First slide&bg=f5f5f5"
-                        alt="Section 1"
-                    />
-                    <Carousel.Caption>
-                        <h5>First slide label</h5>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
+        <div >
+
+            <div style={{
+                width: '100%', height: '500px',
+                backgroundImage: `url(${image1})`,
+                backgroundPosition: 'center',
+                backgroundSize: 'fluid',
+            }}>
 
 
-            </Carousel>
-        </div>
+                <div className='text-center fw-5'>
+                    <h1 className='my-4' style={{ fontSize: '40px', color: 'green', fontWeight: 'bold', fontStyle: 'italic' }}>Get Your Dental Treatment in Happy Smile</h1>
+                    <h2 style={{ fontSize: '25px', color: 'red', fontWeight: 'bold', fontStyle: 'italic' }}>Why Happy Smile?</h2>
+                    <p style={{ fontSize: '25px', color: 'orange', fontWeight: 'bold', fontStyle: 'italic' }}>Providing the World Class Dentists Service</p>
+                    <p style={{ fontSize: '25px', color: 'green', fontWeight: 'bold', fontStyle: 'italic' }}>Specialized in Dental Implant</p>
+                    <p style={{ fontSize: '25px', color: 'green', fontWeight: 'bold', fontStyle: 'italic' }}>Complete Sevice of Dental in One Location</p>
+                    <p style={{ fontSize: '25px', color: 'green', fontWeight: 'bold', fontStyle: 'italic' }}>Latest in Dental Technology for Customized Care</p>
+                    <p style={{ fontSize: '25px', color: 'green', fontWeight: 'bold', fontStyle: 'italic' }}>On-Site State-of-the-Art Lab</p>
+                    <p style={{ fontSize: '25px', color: 'green', fontWeight: 'bold', fontStyle: 'italic' }}>New Smile in One Day</p>
+                </div>
+
+
+            </div>
+
+        </div >
     );
 };
 

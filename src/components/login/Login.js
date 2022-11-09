@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext, useState } from "react";
-import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import { GoogleAuthProvider } from 'firebase/auth';
 import { Button, Form } from 'react-bootstrap';
 import { AuthContext } from '../../Context/AuthProvider';
 import useTitle from '../useTitle/useTitle';
@@ -12,7 +12,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const googleProvider = new GoogleAuthProvider();
-    const gitProvider = new GithubAuthProvider()
+    // const gitProvider = new GithubAuthProvider()
     const from = location.state?.from?.pathname || '/';
 
     const googleSignIn = () => {
@@ -33,23 +33,23 @@ const Login = () => {
             })
     }
 
-    const gitSignIn = () => {
-        providerLogin(gitProvider)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-                setError('');
-                navigate(from, { replace: true });
+    // const gitSignIn = () => {
+    //     providerLogin(gitProvider)
+    //         .then(result => {
+    //             const user = result.user;
+    //             console.log(user);
+    //             setError('');
+    //             navigate(from, { replace: true });
 
-            })
-            .catch(error => {
-                console.error(error)
-                setError(error.message);
-            })
-            .finally(() => {
-                setLoading(false);
-            })
-    }
+    //         })
+    //         .catch(error => {
+    //             console.error(error)
+    //             setError(error.message);
+    //         })
+    //         .finally(() => {
+    //             setLoading(false);
+    //         })
+    // }
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -93,7 +93,7 @@ const Login = () => {
                     </Form.Group>
                     <div className="d-grid gap-2 my-4">
                         <Button variant="primary" type="submit">
-                            Login
+                            Login with email and password
                         </Button>
                     </div>
                     <Form.Text className="text-danger">
@@ -104,9 +104,9 @@ const Login = () => {
             <div className="d-grid gap-2 my-4">
                 <Button onClick={googleSignIn} variant="primary">Log in with Gmail</Button>{' '}
             </div>
-            <div className="d-grid gap-2 my-4">
+            {/* <div className="d-grid gap-2 my-4">
                 <Button onClick={gitSignIn} variant="success">Log in with Git</Button>{' '}
-            </div>
+            </div> */}
             <div className="d-grid gap-2 my-4">
                 <Button variant="success">If you have no account, please <Link to={'/register'} className="text-dark">Register</Link></Button>{' '}
             </div>

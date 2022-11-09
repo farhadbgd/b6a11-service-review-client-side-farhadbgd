@@ -1,24 +1,32 @@
 import React from 'react';
-import Carousel from 'react-bootstrap/Carousel';
+import image from './image.jpg'
 
 const Section2 = () => {
     return (
         <div>
-            <Carousel variant="dark">
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src="holder.js/800x400?text=First slide&bg=f5f5f5"
-                        alt="First slide"
-                    />
-                    <Carousel.Caption>
-                        <h5>Section 2</h5>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
+            <div style={{
+                width: '100%', height: '500px',
+                backgroundColor: '#1c2b3f',
+                marginTop: '25px'
+            }}>
+                <div className='text-center fw-5 mt-4'>
+                    <div className='text-center'>
+                        <h1 className='my-4' style={{ fontSize: '40px', color: 'white', fontWeight: 'bold', marginTop: '20px' }}>
+                            Experts You Can Trust</h1>
+                        <h2 style={{ fontSize: '25px', color: 'orange', fontWeight: 'bold', fontStyle: 'italic' }}>
+                            FAMILY, COSMETIC, AND IMPLANT DENTISTRY LOCATED IN ST. PAUL</h2>
+                        <p style={{ fontSize: '25px', color: 'white', fontWeight: 'bold', fontStyle: 'italic' }}>
+                            Part of our commitment to serving our patients includes providing information that helps them to make more informed decisions about their oral health needs and the dental treatments they are receiving. We encourage you to visit our dental videos page which contains a library of videos related to the dental procedures and treatment options we offer. Our doctors lecture around the country, and we leverage that sought-after expertise to provide the best experience for our patients.
+                        </p>
+
+                    </div>
+                </div>
 
 
-            </Carousel>
+
+
+
+            </div>
 
         </div>
     );

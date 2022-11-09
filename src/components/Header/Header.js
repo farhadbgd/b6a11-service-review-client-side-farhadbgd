@@ -7,7 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { AuthContext } from '../../Context/AuthProvider';
 import { FaUser } from 'react-icons/fa';
-import PrivateRoute from '../PrivateRoute/PrivateRoute';
+
 
 const Header = () => {
 
@@ -74,7 +74,7 @@ const Header = () => {
                                             <span>{user?.displayName ? user.displayName : user.email}</span>
                                             <Link variant="light" onClick={handleLogOut} className="d-flex align-items-center px-2 text-dark" style={{ textDecoration: 'none' }}>Logout</Link>
                                             <Link variant="light" to={'/addservice'} className="d-flex align-items-center px-2 text-dark" style={{ textDecoration: 'none' }}>Add Service</Link>
-                                            <Link variant="light" to={'/myreview'} className="d-flex align-items-center px-2 text-dark" style={{ textDecoration: 'none' }}>My Review</Link>
+                                            <Link variant="light" to={'/myreview'} className="d-flex align-items-center px-2 text-dark" style={{ textDecoration: 'none' }}>My Reviews</Link>
                                         </>
                                         :
                                         <>
