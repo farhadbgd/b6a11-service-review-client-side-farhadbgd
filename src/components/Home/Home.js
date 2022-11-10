@@ -41,7 +41,7 @@ const Home = () => {
                                                 </Card.Text>
                                             </Card.Body>
                                             <ListGroup className="list-group-flush">
-                                                <ListGroup.Item>Service Charge: {service.fee}</ListGroup.Item>
+                                                <ListGroup.Item>Service Charge: USD {service.fee}</ListGroup.Item>
 
                                             </ListGroup>
                                             <Card.Body>

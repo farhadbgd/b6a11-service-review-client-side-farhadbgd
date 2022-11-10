@@ -8,6 +8,7 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const Service = () => {
     const services = useLoaderData()
@@ -30,7 +31,12 @@ const Service = () => {
                             <Col>
 
                                 <Card style={{ width: '30rem', margin: 'auto' }}>
-                                    <Card.Img variant="top" src={services.img} />
+                                    <PhotoProvider>
+                                        <PhotoView src={services.img}>
+                                            <Card.Img variant="top" src={services?.img} />
+                                        </PhotoView>
+                                    </PhotoProvider>
+
                                     <Card.Body>
                                         <Card.Title className='text-center'>{services.title}</Card.Title>
                                         <Card.Text >
