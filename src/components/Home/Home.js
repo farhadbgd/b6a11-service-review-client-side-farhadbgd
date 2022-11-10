@@ -11,9 +11,15 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
+
+
+
 const Home = () => {
     const services = useLoaderData()
-    console.log(services);
+
+
+
+
     return (
         <div>
             <Banner></Banner>

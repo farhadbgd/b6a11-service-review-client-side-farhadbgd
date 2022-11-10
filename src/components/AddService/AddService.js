@@ -2,38 +2,15 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import useTitle from '../useTitle/useTitle';
-// import Toast from 'react-bootstrap/Toast';
-import toast from 'react-hot-toast';
-import { Modal } from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const AddService = () => {
+    // dinamic title
     useTitle('addservice');
-
-    const notify = () => toast('Your have enrolled to the course successfully! Thank you')
-    function StaticExample() {
-        return (
-            <Modal.Dialog>
-                <Modal.Header closeButton>
-                    <Modal.Title>Modal title</Modal.Title>
-                </Modal.Header>
-
-                <Modal.Body>
-                    <p>Modal body text goes here.</p>
-                </Modal.Body>
-
-                <Modal.Footer>
-                    <Button variant="secondary">Close</Button>
-                    <Button variant="primary">Save changes</Button>
-                </Modal.Footer>
-            </Modal.Dialog>
-        );
-    }
-
-    StaticExample()
-    notify();
-    alert('User added successfully');
-
+    // Set the toast
+    const notify = () => toast("Service added successfully");
 
     const [users, setUsers] = useState({})
     const handleSubmit = (e) => {
@@ -49,17 +26,12 @@ const AddService = () => {
             .then(response => response.json())
             .then(data => {
                 if (data.acknowledged) {
-                    StaticExample()
                     notify();
-                    alert('User added successfully');
-
+                    <ToastContainer />
                 }
                 console.log(data);
                 e.target.reset();
             })
-
-
-
 
     }
     const handleBlur = (e) => {
@@ -73,17 +45,12 @@ const AddService = () => {
     return (
         <div>
             <Form onSubmit={handleSubmit}>
-
-
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Control onBlur={handleBlur} style={{ padding: "10px" }} type="text" name='title' placeholder="Service Name" /> <br />
                     <Form.Control onBlur={handleBlur} style={{ padding: "10px" }} type="number" name='fee' placeholder="Service Fee " /><br />
                     <Form.Control onBlur={handleBlur} style={{ padding: "10px" }} type="text" name='details' placeholder="Service details, please put minimum 100 words" /><br />
                     <Form.Control onBlur={handleBlur} style={{ padding: "10px" }} type="text" name='img' placeholder="images URL" /><br />
-
                 </Form.Group>
-
-
                 <Button className='w-100' variant="primary" type="submit" size="lg">
                     Submit to add service
                 </Button>
