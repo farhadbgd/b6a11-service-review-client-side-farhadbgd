@@ -15,7 +15,7 @@ const AddRivew = () => {
     const notify = () => toast("Review added successfully");
     const { user } = useContext(AuthContext);
     console.log(user);
-    const { _id } = useLoaderData();
+    const { _id, title } = useLoaderData();
 
     const [users, setUsers] = useState({})
     const handleSubmit = (e) => {
@@ -26,6 +26,7 @@ const AddRivew = () => {
         const img = user?.photoURL || <FaUser></FaUser>
         const message = form.message.value;
         const review = {
+            serviceName: title,
             serviceId: _id,
             reviewer: name,
             email: email,

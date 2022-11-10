@@ -16,9 +16,6 @@ const Service = () => {
 
     const [reviews, setReviews] = useState()
 
-    console.log(reviews)
-    console.log(reviews?.img)
-    // console.log(reviews.reviewer)
     fetch('http://localhost:5000/reviews')
         .then(response => response.json())
         .then(data => {
@@ -83,7 +80,7 @@ const Service = () => {
                                         src={reviews?.img || <FaUser></FaUser>}>
                                     </Image>
                                     <Card.Body>
-                                        <Card.Title className='text-center'>{services?.reviewer}</Card.Title>
+                                        <Card.Title className='text-center'>{reviews?.reviewer || "No Review Found"}</Card.Title>
                                         <Card.Text >
                                             Date and Time  {services?.ts}
                                         </Card.Text>
