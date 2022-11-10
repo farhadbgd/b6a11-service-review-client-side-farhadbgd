@@ -12,6 +12,7 @@ import Spinner from 'react-bootstrap/Spinner';
 
 
 
+
 const Services = () => {
     // spinner loading
     function BasicExample() {
@@ -23,7 +24,7 @@ const Services = () => {
     }
     BasicExample();
     useTitle('services');
-    const services = useLoaderData()
+    const services = useLoaderData();
 
     return (
         <div>
@@ -48,7 +49,7 @@ const Services = () => {
                                         <Card.Body>
                                             <Card.Title >{service.title}</Card.Title>
                                             <Card.Text >
-                                                {service.details.substring(0, 100)}
+                                                {service.details?.substring(0, 100)}
                                             </Card.Text>
                                         </Card.Body>
                                         <ListGroup className="list-group-flush">

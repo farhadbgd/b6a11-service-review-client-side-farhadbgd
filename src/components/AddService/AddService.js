@@ -48,14 +48,14 @@ const AddService = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Control onBlur={handleBlur} style={{ padding: "10px" }} type="text" name='title' placeholder="Service Name" /> <br />
                     <Form.Control onBlur={handleBlur} style={{ padding: "10px" }} type="number" name='fee' placeholder="Service Fee " /><br />
-                    <Form.Control onBlur={handleBlur} style={{ padding: "10px" }} type="text" name='details' placeholder="Service details, please put minimum 100 words" /><br />
+                    <Form.Control onBlur={handleBlur} style={{ padding: "10px" }} type="text" name='details' placeholder="Service details" /><br />
                     <Form.Control onBlur={handleBlur} style={{ padding: "10px" }} type="text" name='img' placeholder="images URL" /><br />
                 </Form.Group>
                 <Button className='w-100' variant="primary" type="submit" size="lg">
                     Submit to add service
                 </Button>
             </Form>
-
+            <ToastContainer />
         </div>
     );
 };

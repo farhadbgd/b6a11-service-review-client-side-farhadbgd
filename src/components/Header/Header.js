@@ -10,10 +10,7 @@ import { FaUser } from 'react-icons/fa';
 
 
 const Header = () => {
-
     const { user, logOut } = useContext(AuthContext);
-
-    console.log(user)
     const handleLogOut = () => {
         logOut()
             .then(() => { })
@@ -40,29 +37,8 @@ const Header = () => {
                         <Nav style={{ fontSize: '20px', color: 'orange', fontWeight: 'bold' }} className="me-auto">
                             <Nav.Link href="/">Home</Nav.Link>
                             <Nav.Link href="/blog">Blog</Nav.Link>
-                            <NavDropdown title="Services" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="/services">Teeth Cleaning</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="/services">
-                                    Teeth Whitening
-                                </NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="/services">
-                                    Teeth Restoration
-                                </NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="/services">
-                                    Dental Extractions
-                                </NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="/services">
-                                    Root Canals
-                                </NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="/services">
-                                    Inlays and Onlays
-                                </NavDropdown.Item>
-                            </NavDropdown>
+                            <Nav.Link href="/services">Services</Nav.Link>
+
                         </Nav>
                         <Nav>
 

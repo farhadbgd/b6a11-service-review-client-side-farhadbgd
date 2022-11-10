@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import AddRivew from "../AddReview/AddRivew";
 import AddService from "../AddService/AddService";
 import Blog from "../Blog/Blog";
 import Error from "../Error/Error";
@@ -19,7 +20,7 @@ export const Routes = createBrowserRouter([
         children: [
             {
                 path: "/",
-                loader: () => fetch('http://localhost:5000/services'),
+                loader: () => fetch('http://localhost:5000/service'),
                 element: <Home></Home>
             },
             {
@@ -30,6 +31,11 @@ export const Routes = createBrowserRouter([
                 path: "/services/:id",
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
                 element: <Service></Service>
+            },
+            {
+                path: "/addreview/:id",
+                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
+                element: <PrivateRoute><AddRivew></AddRivew></PrivateRoute>
             },
             {
                 path: "/services",
@@ -54,6 +60,7 @@ export const Routes = createBrowserRouter([
             },
             {
                 path: "/myreview",
+                loader: () => fetch('http://localhost:5000/services'),
                 element: <PrivateRoute><MyReview></MyReview></PrivateRoute>
 
             },

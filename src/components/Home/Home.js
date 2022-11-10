@@ -27,7 +27,8 @@ const Home = () => {
             <div>
                 <div className="d-flex flex-wrap justify-content-evenly  m-4">
                     {
-                        services?.slice(0, 3).map(service =>
+                        // services?.slice(0, 3).map(service =>
+                        services.map(service =>
                             <div >
 
                                 <Row xs={1} md={2} lg={3} className="g-6 m-5">
